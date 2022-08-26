@@ -1,0 +1,5 @@
+# git+https://github.com/ApeWorX/ape@4d27762#main=ape  # 0.4.5
+# git+https://github.com/ApeWorX/ape@39c99ea#main=ape  # 0.4.4
+git+https://github.com/ApeWorX/ape@091a650#main=ape   # 0.4.0
+vyper==0.3.6
+
