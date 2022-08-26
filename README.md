@@ -40,7 +40,7 @@ ERROR: (VyperCompileError) FileNotFoundError:  Cannot locate interface 'contract
 
 ## Tests
 
-If the compiler is working successfully with the import statements, the following tests should function as described. However, when any branch other than master is compiled with `ape compile`, the compilation fails with a FileNotFoundError when trying to locate the interface.
+If the compiler is working successfully with the import statements, the following tests should function as described. However, when any branch other than `main` is compiled with `ape compile`, the compilation fails with a FileNotFoundError when trying to locate the interface.
 
 
 ### Test that valid usage compiles successfully
