@@ -1,6 +1,6 @@
 # @version 0.3.6
 
-import ProviderInterface as Provider
+import contracts.interfaces.ProviderInterface as Provider
 
 implements: Provider
 
