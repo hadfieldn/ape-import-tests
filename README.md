@@ -1,5 +1,34 @@
 # Testing Ape support for Vyper interfaces
 
+This repo contains separate branches to test different Vyper syntaxes for importing an interface:
+
+- `master` -- compiles successfully with both Ape and Vyper
+- `absolute-import-from-current-dir` -- fails to compile with Ape
+- `absolute-import-from-subfolder` -- fails to compile with Ape
+- `relative-import` -- fails to compile with Ape
+
+
+### Background
+
+Per the [Vyper documentation](https://vyper.readthedocs.io/en/stable/interfaces.html#importing-interfaces) on importing interfaces, all of the following should work:
+
+```vyper
+
+# works with `ape compile`
+import ProviderInterface as Provider                       # absolute import
+
+# does NOT work with `ape compile` (but does work with `vyper` compile)
+import contracts.ProviderInterface as Provider             # absolute import with full path
+from . import ProviderInterface as Provider                # relative import
+from .interfaces import ProviderInterface as Provider.     # relative import with subfolder
+```
+
+Each of the above will compile directly with Vyper, but when compiling with ape 0.4.0 - 0.4.5, the compiler raises a `FileNotFoundError`:
+
+```
+ERROR: (VyperCompileError) FileNotFoundError:  Cannot locate interface 'contracts/ProviderInterface{.vy,.json}'
+```
+
 ### Setup
 
 1. Install Python 3.9.8 (or similar)
