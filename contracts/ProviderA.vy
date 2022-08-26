@@ -1,6 +1,6 @@
 # @version 0.3.6
 
-import ProviderInterface as Provider
+from . import ProviderInterface as Provider
 
 implements: Provider
 
