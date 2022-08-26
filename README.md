@@ -8,7 +8,7 @@ This repo contains separate branches to test different Vyper syntaxes for import
 - `relative-import` -- fails to compile with Ape
 
 
-### Background
+## Background
 
 Per the [Vyper documentation](https://vyper.readthedocs.io/en/stable/interfaces.html#importing-interfaces) on importing interfaces, all of the following should work:
 
@@ -29,13 +29,19 @@ Each of the above will compile directly with Vyper, but when compiling with ape 
 ERROR: (VyperCompileError) FileNotFoundError:  Cannot locate interface 'contracts/ProviderInterface{.vy,.json}'
 ```
 
-### Setup
+## Setup
 
 1. Install Python 3.9.8 (or similar)
 
 1. `pip install -r requirements.txt`
 
 1. `ape plugins install .`
+
+
+## Tests
+
+If the compiler is working successfully with the import statements, the following tests should function as described. However, when any branch other than master is compiled with `ape compile`, the compilation fails with a FileNotFoundError when trying to locate the interface.
+
 
 ### Test that valid usage compiles successfully
 
